@@ -1,0 +1,4 @@
+docker network create --driver bridge --subnet  172.18.0.0/16 --gateway 172.18.0.1 docker-cluster
+
+
+docker run -itd --network=docker-cluster  --ip=172.18.0.2 --restart=always --privileged=true --name portainer-server -p 9000:9000 --network-alias portainer-server --hostname portainer-server -e TZ=Asia/Shanghai -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer/data:/data portainer-ce:latest
