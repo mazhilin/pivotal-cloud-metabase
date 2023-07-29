@@ -1,0 +1,144 @@
+# Copyright (c) 2015, 2021, Oracle and/or its affiliates.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License, version 2.0,
+# as published by the Free Software Foundation.
+#
+# This program is also distributed with certain software (including
+# but not limited to OpenSSL) that is licensed under separate terms,
+# as designated in a particular file or component or in included license
+# documentation.  The authors of MySQL hereby grant you an additional
+# permission to link the program and your derivative works with the
+# separately licensed software that they have included with MySQL.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License, version 2.0, for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA
+
+#
+# The MySQL  Client configuration file.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+[mysql]
+skip-grant-tables
+skip-host-cache
+skip-name-resolve
+default_authentication_plugin=mysql_native_password
+bind-address = 0.0.0.0
+mysqlx-bind-address = 0.0.0.0
+character-set-client-handshake=FALSE
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+init_connect='SET NAMES utf8mb4'
+open_files_limit = 3072
+back_log=200
+max_connections = 20
+max_connect_errors = 10
+table_open_cache = 128
+external-locking = FALSE
+max_allowed_packet = 4M
+sort_buffer_size = 2M
+join_buffer_size = 2M
+thread_cache_size = 128
+tmp_table_size = 16M
+max_heap_table_size = 8M
+slow_query_log = 1
+long_query_time = 0.05
+sync_binlog = 1
+binlog_cache_size = 4M
+binlog_format=row
+max_binlog_cache_size = 8M
+max_binlog_size = 512M
+key_buffer_size = 8M
+read_buffer_size = 1M
+read_rnd_buffer_size = 8M
+bulk_insert_buffer_size = 32M
+default-storage-engine=InnoDB
+log-bin=/var/lib/mysql/mysql-bin
+binlog_format=row
+transaction_isolation = REPEATABLE-READ
+sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'
+default-storage-engine=INNODB
+innodb_thread_concurrency=12
+innodb_flush_log_at_trx_commit=1
+innodb_max_dirty_pages_pct=30
+innodb_io_capacity=10000
+innodb_log_buffer_size=1024M
+innodb_flush_method=O_DIRECT
+innodb_flush_neighbors=0
+innodb_log_files_in_group=4
+innodb_compression_level=0
+innodb_file_per_table=1
+innodb_compression_pad_pct_max=50
+innodb_buffer_pool_size=256M
+interactive_timeout=500
+wait_timeout=500
+innodb_log_file_size=256M
+lower_case_table_names=1
+lower_case_file_system=ON
+[mysqld]
+default_authentication_plugin=mysql_native_password
+bind-address = 0.0.0.0
+mysqlx-bind-address = 0.0.0.0
+skip-grant-tables
+skip-host-cache
+skip-name-resolve
+skip-grant-tables
+init_connect='SET NAMES utf8mb4'
+open_files_limit = 3072
+back_log=200
+max_connections = 20
+max_connect_errors = 10
+table_open_cache = 128
+external-locking = FALSE
+max_allowed_packet = 4M
+sort_buffer_size = 2M
+join_buffer_size = 2M
+thread_cache_size = 128
+tmp_table_size = 16M
+max_heap_table_size = 8M
+slow_query_log = 1
+long_query_time = 0.05
+sync_binlog = 1
+binlog_cache_size = 4M
+binlog_format=row
+max_binlog_cache_size = 8M
+max_binlog_size = 512M
+key_buffer_size = 8M
+read_buffer_size = 1M
+read_rnd_buffer_size = 8M
+bulk_insert_buffer_size = 32M
+default-storage-engine=InnoDB
+log-bin=/var/lib/mysql/mysql-bin
+binlog_format=row
+transaction_isolation = REPEATABLE-READ
+sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'
+default-storage-engine=INNODB
+innodb_thread_concurrency=12
+innodb_flush_log_at_trx_commit=1
+innodb_max_dirty_pages_pct=30
+innodb_io_capacity=10000
+innodb_log_buffer_size=1024M
+innodb_flush_method=O_DIRECT
+innodb_flush_neighbors=0
+innodb_log_files_in_group=4
+innodb_compression_level=0
+innodb_file_per_table=1
+innodb_compression_pad_pct_max=50
+innodb_buffer_pool_size=256M
+interactive_timeout=500
+wait_timeout=500
+innodb_log_file_size=256M
+lower_case_table_names=1
+[mysqldump]
+quick
+quote-names
+max_allowed_packet=500M
+[client]
+default-character-set=utf8mb4
